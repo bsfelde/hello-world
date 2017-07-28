@@ -210,34 +210,5 @@ def main():
 
 	print '\n\n'
 
-	# SegmentDelimiter = '|'
-	# ElementDelimiter = '~'
-
-	# outputpath = "C:/Users/bsfelde/Desktop/PythonTraining/"
-	# filename = 'UPS-mock.txt'
-
-	# def practice(dater):
-	# 	with open(outputpath + filename, "w") as text_file:
-	# 		for segment in dater:
-	# 			for element in segment[:-1]:
-	# 				text_file.write(str(element)+str(ElementDelimiter))
-	# 			text_file.write(str(segment[-1]))
-	# 			if segment[0] == 'IEA':
-	# 				pass
-	# 			else:
-	# 				text_file.write(SegmentDelimiter)
-
-
-	# practice(dater)
-
-
-
-
-	#SegmentSplitter(segments)
-	# print elements
-
-	# data = elementsplitter(elements)
-	# print data
-
 if __name__ == '__main__':
      main()
