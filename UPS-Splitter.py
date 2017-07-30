@@ -16,6 +16,7 @@
 
 def lxSplitter():
 	with open('UPS-batch.txt', 'r+') as f:
+		#splits data by LX segments, but each 'LX' is removed
 		for line in f:
 			LXsegments = line.split('LX')
 		return LXsegments
@@ -34,6 +35,7 @@ def lxFinder(data):
 	LXlist = []
 
 	#Looks for tracking number, N9*CN, then pulls out the containing LX segments
+	#Adds LX element back into each pulled segment
 	while m < len(data):
 		if '1ZV093480100055729' in data[m]:
 			LXlist.append('LX' + data[m])
@@ -47,12 +49,13 @@ def lxFinder(data):
 	return LXlist
 
 def segmentsplitter(data):
+	#splits data by each |
 	segment = data.split('|')
 
 	return segment
 
 def elementsplitter(segment):
-	#Split segments by elements, return them in a list
+	#Split segments by each ~, return them in a list
 	splitdata = [letter.split('~') for letter in segment]
 
 	return splitdata 
