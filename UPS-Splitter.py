@@ -53,10 +53,8 @@ def segmentsplitter(data):
 
 def elementsplitter(segment):
 	#Split segments by elements, return them in a list
-	splitdata = []
+	splitdata = [letter.split('~') for letter in segment]
 
-	for letter in segment:
-		splitdata.append(letter.split('~'))
 	return splitdata 
 
 def segmentcounter(data):
@@ -84,11 +82,8 @@ def b3l3Checker(data):
 
 def totalSum(data):
 	#Totals all L104 segments and then changes B307 and L305 to that value
-	L1segment = []
+	L1segment = [int(segment[4]) for segment in data if segment[0] == 'L1')
 
-	for segment in data:
-		if segment[0] == 'L1':
-				L1segment.append(int(segment[4]))
 	L104 = sum(L1segment)
 
 	data[3][7] = L104
